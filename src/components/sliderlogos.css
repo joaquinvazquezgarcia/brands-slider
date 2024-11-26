@@ -1,0 +1,152 @@
+html {
+  font-size: 100%;
+}
+
+/* modify the roots to match the web colors*/
+:root {
+  --slider-bg-color: transparent;
+  --slider-vanish-color: #fff;
+  --tranparent: rgba(0, 0, 0, 0);
+  --imgHeight: 12.5rem;
+  --imgSpacing: 3rem;
+  --sliderWidth: 100%;
+}
+
+.slider-container {
+  background-color: var(--slider-bg-color);
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: var(--sliderWidth);
+}
+
+.slider__logos {
+  display: flex;
+}
+/* modify slider speed (animation-time) */
+.slider__logos-active {
+  animation: slide 45s linear infinite;
+}
+/* modify slider speed (animation-time) */
+.slider__logos-active.one {
+  animation: slide 40s linear infinite;
+}
+/* modify slider speed (animation-time) */
+.slider__logos-active.two {
+  animation: slide 35s linear infinite;
+}
+/* modify slider speed (animation-time) */
+.slider__logos-active.three {
+  animation: slide 20s linear infinite;
+}
+/* modify slider speed (animation-time) */
+.slider__logos-active.four {
+  animation: slide 10s linear infinite;
+}
+/* modify slider speed (animation-time) */
+.slider__logos-active.five {
+  animation: slide 5s linear infinite;
+}
+
+/*modify slider height and img separation*/
+.slider__img {
+  all: initial;
+  height: var(--imgHeight);
+  margin: 0 var(--imgSpacing);
+}
+
+.slider__overlay:hover ~ .slider__logos {
+  animation-play-state: paused;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* optional vanish effect in the sides */
+.slider__overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  background: linear-gradient(
+    to right,
+    var(--slider-vanish-color) 0%,
+    var(--tranparent) 5%,
+    var(--tranparent) 95%,
+    var(--slider-vanish-color) 100%
+  );
+}
+
+@media screen and (max-width: 400px) {
+  .slider-container {
+    margin: 0;
+  }
+  /*modify slider height and img separation*/
+  .slider__img {
+    height: calc(var(--imgHeight) - 2);
+    margin: 0 calc(var(--imgSpacing) - 1);
+  }
+  /* optional vanish effect in the sides */
+  .slider__overlay {
+    background: linear-gradient(
+      to right,
+      var(--slider-vanish-color) 0%,
+      var(--tranparent) 5%,
+      var(--tranparent) 95%,
+      var(--slider-vanish-color) 100%
+    );
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
+  .slider-container {
+    margin: 0;
+  }
+  /*modify slider height and img separation*/
+  .slider__img {
+    height: calc(var(--imgHeight) - 1);
+    margin: 0 calc(var(--imgSpacing) - 1);
+  }
+  /* optional vanish effect in the sides */
+  .slider__overlay {
+    background: linear-gradient(
+      to right,
+      var(--slider-vanish-color) 0%,
+      var(--tranparent) 5%,
+      var(--tranparent) 95%,
+      var(--slider-vanish-color) 100%
+    );
+  }
+  /* modify slider speed (animation-time) */
+  .slider__logos-active {
+    animation: slide 42s linear infinite;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .slider-container {
+    margin: 0;
+  }
+  /*modify slider height and img separation*/
+  .slider__img {
+    height: var(--imgHeight);
+    margin: 0 var(--imgSpacing);
+  }
+  /* optional vanish effect in the sides */
+  .slider__overlay {
+    background: linear-gradient(
+      to right,
+      var(--slider-vanish-color) 0%,
+      var(--tranparent) 5%,
+      var(--tranparent) 95%,
+      var(--slider-vanish-color) 100%
+    );
+  }
+}
