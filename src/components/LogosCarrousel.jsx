@@ -1,6 +1,6 @@
-import "./sliderlogos.css";
+import "./logosCarrousel.css";
 
-export const BrandsSlider = ({
+export const LogosCarrousel = ({
   children,
   background,
   width,
@@ -40,10 +40,12 @@ export const BrandsSlider = ({
   };
   const classWidth = setWidth();
 
-  const SliderContent = ({ imgSize, spacing }) => {
+  const CarrouselContent = ({ imgSize, spacing }) => {
     return (
       <div
-        className={"slider__logos slider__logos-active" + " " + classSpeed}
+        className={
+          "carrousel__logos carrousel__logos-active" + " " + classSpeed
+        }
         style={{
           "--imgHeight": `${imgSize}rem`,
           "--imgSpacing": `${spacing}rem`,
@@ -56,20 +58,20 @@ export const BrandsSlider = ({
 
   return (
     <div
-      className={"slider-container" + " " + classWidth}
+      className={"carrousel-container" + " " + classWidth}
       style={{
         background: background,
-        "--sliderWidth": `${width}%`,
+        "--carrouselWidth": `${width}%`,
       }}
     >
       <div
-        className="slider__overlay"
+        className="carrousel__overlay"
         style={{
-          "--slider-vanish-color": background,
+          "--carrousel-vanish-color": background,
         }}
       />
-      <SliderContent imgSize={imgSize} spacing={spacing} />
-      <SliderContent imgSize={imgSize} spacing={spacing} />
+      <CarrouselContent imgSize={imgSize} spacing={spacing} />
+      <CarrouselContent imgSize={imgSize} spacing={spacing} />
     </div>
   );
 };

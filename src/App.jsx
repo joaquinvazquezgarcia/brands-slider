@@ -1,34 +1,34 @@
-import { BrandsSlider } from "./components/Slider";
-import { SliderItem } from "./components/SliderItem";
+import { LogosCarrousel } from "./components/LogosCarrousel";
+import { CarrouselItem } from "./components/CarrouselItem";
 
 function App() {
   return (
-    <BrandsSlider background={"#252525"}>
-      <SliderItem
+    <LogosCarrousel background={"#252525"}>
+      <CarrouselItem
         src={
           "https://images.vexels.com/content/142789/preview/multicolor-swirls-circle-logo-41322f.png"
         }
         alt={"img"}
       />
-      <SliderItem
+      <CarrouselItem
         src={
           "https://images.vexels.com/content/142789/preview/multicolor-swirls-circle-logo-41322f.png"
         }
         alt={"img"}
       />
-      <SliderItem
+      <CarrouselItem
         src={
           "https://images.vexels.com/content/142789/preview/multicolor-swirls-circle-logo-41322f.png"
         }
         alt={"img"}
       />
-      <SliderItem
+      <CarrouselItem
         src={
           "https://images.vexels.com/content/142789/preview/multicolor-swirls-circle-logo-41322f.png"
         }
         alt={"img"}
       />
-    </BrandsSlider>
+    </LogosCarrousel>
   );
 }
 
